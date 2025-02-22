@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alertify</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="emergency-container">
+      <button id="sosButton" class="sos-btn">SOS</button>
+      <button id="emergencyButton" class="emergency-btn">Emergency</button>
+      <div class="emergency-dropdown" id="emergencyDropdown">
+        <ul>
+          <li><a href="tel:100">🚔 Police - 100</a></li>
+          <li><a href="tel:101">🔥 Fire - 101</a></li>
+          <li><a href="tel:1091">👩 Women's Safety - 1091</a></li>
+          <li><a href="tel:102">🚑 Ambulance - 102</a></li>
+        </ul>
+      </div>
+    </div>
+    <h1 class="header-title">Alertify</h1>
+    <div class="options-container">
+      <button class="options-btn">
+        <img src="https://img.icons8.com/material-rounded/24/menu.png" alt="Options Menu" class="options-icon">
+      </button>
+      <div class="options-menu">
+        <a href="#">Profile</a>
+        <a href="#">Settings</a>
+        <a href="#">Help</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <main class="container">
+    <!-- Left Flexbox -->
+    <div class="flexbox">
+      <form id="incidentForm">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" placeholder="Enter location" required>
+
+        <label for="incidentType">Incident Type:</label>
+        <select id="incidentType" name="incidentType" required>
+          <option value="" disabled selected>Select an incident</option>
+          <option value="Fire">Fire</option>
+          <option value="Flood">Flood</option>
+          <option value="Accident">Accident</option>
+          <option value="Earthquake">Earthquake</option>
+          <option value="Landslide">Landslide</option>
+          <option value="Medical Emergency">Medical Emergency</option>
+          <option value="Crime">Crime</option>
+          <option value="Power Outage">Power Outage</option>
+          <option value="Gas Leak">Gas Leak</option>
+          <option value="Garbage">Garbage</option>
+        </select>
+
+        <label for="imageUpload">Upload Image:</label>
+        <input type="file" id="imageUpload" name="imageUpload" accept="image/*" required>
+
+        <label for="incidentDetails">Additional Details:</label>
+        <textarea id="incidentDetails" name="incidentDetails" placeholder="Provide more information about the incident"></textarea>
+
+
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- Center Flexbox -->
+    <div class="flexbox" id="mapContainer">
+      <div id="map"></div>
+    </div>
+
+    <!-- Right Flexbox -->
+    <div class="flexbox" id="outputContainer">
+      <h2>Notifications</h2>
+      <ul id="incidentSummary"></ul>
+    </div>
+
+<!-- Chat Section -->
+<div class="chat-container">
+  <div class="chat-header">
+    <h3>Local Chat</h3>
+    <button id="closeChat">×</button>
+  </div>
+  <div id="chatMessages" class="chat-messages"></div>
+  <div class="chat-input">
+    <input type="text" id="chatInput" placeholder="Type a message..." />
+    <button id="sendChat">Send</button>
+  </div>
+</div>
+
+<!-- Chat Button -->
+<button id="openChat" class="chat-btn">💬 Chat</button>
+
+
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+  
+</body>
+</html>
