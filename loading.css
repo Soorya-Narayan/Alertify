@@ -1,0 +1,56 @@
+/* Reset basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background-color: #000;
+    color: #FFD700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .loading-container {
+    text-align: center;
+  }
+  
+  .loading-text {
+    font-size: 2rem;
+    color: #FFD700;
+    text-transform: uppercase;
+    animation: pulse 1s infinite;
+    margin: 20px 0;
+  }
+  
+  .tape-pattern {
+    background: repeating-linear-gradient(
+      -45deg,
+      #FFD700,
+      #FFD700 20px,
+      #000 20px,
+      #000 40px
+    );
+    height: 20px;
+    width: 100%;
+    max-width: 500px;
+    margin: 10px auto;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
