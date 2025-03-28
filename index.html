@@ -27,7 +27,7 @@
         <img src="https://img.icons8.com/material-rounded/24/menu.png" alt="Options Menu" class="options-icon">
       </button>
       <div class="options-menu">
-        <a href="#">Profile</a>
+        <a href="Profile/profile.html">Profile</a>
         <a href="#">Settings</a>
         <a href="#">Help</a>
         <a href="#">Logout</a>
@@ -101,10 +101,30 @@
 
   </main>
 
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js"></script>
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
   <script src="script.js"></script>
+  <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+// Your Firebase Configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDsNQGZLSFc3an5BNlDc5J_RpNqCBITwIc",
+  authDomain: "myproject-84de6.firebaseapp.com",
+  projectId: "myproject-84de6",
+  storageBucket: "myproject-84de6.appspot.com",
+  messagingSenderId: "22597627221",
+  appId: "1:22597627221:web:b371ab66a06889f3f153dc",
+  measurementId: "G-1EBRX827NN"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);  // Initialize Firestore
+console.log("Firebase Initialized Successfully!");
+
+  </script>
+  
   
 </body>
 </html>
